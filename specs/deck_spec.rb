@@ -49,7 +49,7 @@ describe Deck do
 
     it 'returns the number of cards in Deck' do
       deck6 = Deck.new
-      result = deck6.cards
+      result = deck6.count
       result.must_equal 52
     end
 
@@ -58,7 +58,7 @@ describe Deck do
       deck7 = Deck.new
       deck7.draw
       deck7.draw
-      result = deck7.cards
+      result = deck7.count
       result.must_equal 50
     end
   end
