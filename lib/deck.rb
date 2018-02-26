@@ -2,11 +2,26 @@
 # deck.rb
 
 require_relative 'card'
-
 class Deck
 
-  def initialize
+  CARDS_PER_SUIT = 13
+  SUITS = [:hearts, :spades, :clubs, :diamonds]
 
+  attr_reader :cards
+
+  def initialize
+    @cards = []
+    self.fill
+  end
+
+  def fill
+    SUITS.each do |suit|
+      CARDS_PER_SUIT.times do |i|
+        value = i+1
+        new_card = Card.new(value,suit)
+        @cards << new_card
+      end
+    end
   end
 
   def draw
