@@ -27,7 +27,6 @@ class Deck
   def draw
     selected = @cards.sample
     @cards.delete(selected)
-    return selected
   end
 
   def shuffle
@@ -35,7 +34,6 @@ class Deck
   end
 
   def count
-    number = @cards.length
-    return number
+    @cards.length
   end
 end

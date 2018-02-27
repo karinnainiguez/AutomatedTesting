@@ -11,6 +11,7 @@ describe Deck do
   describe 'Deck instance' do
     it "can be created" do
       deck1 = Deck.new
+      deck1.must_be_instance_of Deck
     end
 
     it "has 52 Card objects as attributes" do

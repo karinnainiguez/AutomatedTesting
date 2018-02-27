@@ -19,6 +19,8 @@ class Card
 
   def name
     case value
+    when 1
+      name = "Ace"
     when 11
       name = "Jack"
     when 12
