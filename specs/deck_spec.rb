@@ -62,6 +62,22 @@ describe Deck do
       result = deck7.count
       result.must_equal 50
     end
+
+    it 'lets you draw 52 cards' do
+      deck8 = Deck.new
+      52.times do
+        deck8.draw
+      end
+      deck8.cards.must_be :empty?
+    end
+
+    it 'raises an error if deck is empty' do
+      deck9 = Deck.new
+      52.times do
+        deck9.draw
+      end
+      proc {deck9.draw}.must_raise
+    end
   end
 
 

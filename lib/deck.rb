@@ -25,12 +25,12 @@ class Deck
   end
 
   def draw
-    selected = @cards.sample
-    @cards.delete(selected)
+    raise StandardError.new('Deck is empty') if @cards.empty?
+    return @cards.pop
   end
 
   def shuffle
-    # shuffles the deck
+    @cards.shuffle!
   end
 
   def count
