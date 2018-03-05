@@ -35,9 +35,24 @@ describe Card do
     it "to_s returns a readable String value for Ace, Jack, Queen, King" do
       # Test to ensure that to_s works for cards values 1, and 11-13
       # For example: "Queen of hearts"
+      card2 = Card.new(11,:hearts)
+      result = card2.to_s
+      result.must_equal "Jack of hearts"
+
       card2 = Card.new(13,:hearts)
       result = card2.to_s
       result.must_equal "King of hearts"
+
+      card3 = Card.new(1,:hearts)
+      result = card3.to_s
+      result.must_equal "Ace of hearts"
+
+      card4 = Card.new(12,:hearts)
+      result = card4.to_s
+      result.must_equal "Queen of hearts"
+
+
+
     end
   end
 
@@ -45,15 +60,15 @@ describe Card do
 
     it "Can retrieve the value of the card using a `.value`." do
       # ensure that `.value works as expected`
-      card3 = Card.new(8, :clubs)
-      result = card3.value
+      card5 = Card.new(8, :clubs)
+      result = card5.value
       result.must_equal 8
     end
 
     it "Can retrieve the value of the card using a `.suit`." do
       # ensure that `.suit works as expected returning the symbol of the suit`
-      card4 = Card.new(5, :spades)
-      result = card4.suit
+      card6 = Card.new(5, :spades)
+      result = card6.suit
       result.must_equal :spades
     end
   end
